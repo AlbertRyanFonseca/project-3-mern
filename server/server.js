@@ -1,6 +1,13 @@
 const express = require("express");
 const app = express()
 
+const db = require("./config/connection");
+const path = require("path");
+
+// import typeDefs and resolvers
+const { typeDefs, resolvers } = require("./schemas");
+const app = express();
+const PORT = process.env.PORT || 3001;
 
 // production, serve client/build as static assets
 if (process.env.NODE_ENV === "production") {
