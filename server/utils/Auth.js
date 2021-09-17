@@ -1,4 +1,4 @@
-const jwtToken = require('jsonwebtoken')
+const jwt = require('jsonwebtoken')
 
 const secret = 'd4a0201e0ef6114ef5e1929db4b879632ecce4b0129ea766d0373cdf10622e96'
 const expiration = '034d8c1c9a45afcc82b546d7b5daf9253bed6323202ff9dc76b1fea10d0e13c5'
