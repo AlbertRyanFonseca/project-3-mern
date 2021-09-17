@@ -7,12 +7,15 @@ function Post() {
         <h1>Supply Post</h1> 
         <form>
 
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" />
+
         <textarea
-                placeholder="New post..."
-                value={postText}
-                className=""
-                onChange={handleChange}
-            ></textarea>
+            placeholder="New post..."
+            value={postText}
+            className=""
+            onChange={handleChange}
+        ></textarea>
         <button className="" type="submit">
           Post
         </button>
