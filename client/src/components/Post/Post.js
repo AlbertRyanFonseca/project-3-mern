@@ -5,6 +5,7 @@ function Post() {
     return (
         <div>
         <h1>Supply Post</h1> 
+        
         <form>
 
         <label for="location">Location:</label>
@@ -16,6 +17,7 @@ function Post() {
             className=""
             onChange={handleChange}
         ></textarea>
+
         <button className="" type="submit">
           Post
         </button>
