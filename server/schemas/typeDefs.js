@@ -15,11 +15,9 @@ const typeDefs = gql`
   }
 
   type Query {
-//  need to work this out
   }
 
   type Mutation {
-//  need to work this out
   }
 
   type Auth {
