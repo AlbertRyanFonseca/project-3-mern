@@ -3,7 +3,10 @@ import './HomePage.css';
 function HomePage(props) {
     return (
         <div className="icons__container">
-            <h2>Hello I'm coding.</h2>
+            <div className="icon__title">
+                <h2>{props.title}</h2>
+                <div className="icon__description">{props.description}</div>
+            </div>
         </div>
     );
 
