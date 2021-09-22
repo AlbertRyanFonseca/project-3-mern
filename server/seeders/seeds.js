@@ -24,16 +24,22 @@ let createdPosts = [];
 
 for (let i=0; i < 100; i += 1) {
 
-    const postText = faker.lorem.words(Math.round(Math.random() * 20) + 1);
+    const description = faker.lorem.words(Math.round(Math.random() * 20) + 1);
     const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
     const { username, _id: userId } = createdUsers.ops[randomUserIndex];
 
-    const createdPost = await Post.create({ postText, username });
+    // only one category, need to figure out how to randomly choose multiple categories
+    const category = "paint/mediums";
 
-    // needs content -- have to figure out how to incorporate random category selection
+    const createdPost = await Post.create({ description, username, category });
 
+    const updatedUser = await User.updateOne(
+        { _id: userId },
+        { $push: { posts: createdPost._id }}
 
+    );
 
+    createdPosts.push(createdPost);
 }
 
     console.log('all done!');
