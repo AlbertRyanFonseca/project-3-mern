@@ -16,6 +16,10 @@ const postSchema = new Schema({
         minlength: 1,
         maxlength: 350
       },
+    category: {
+      type: String,
+      required: 'You need to select a category'
+    },  
       createdAt: {
         type: Date,
         default: Date.now,
