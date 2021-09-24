@@ -29,7 +29,7 @@ for (let i=0; i < 100; i += 1) {
     const { username, _id: userId } = createdUsers.ops[randomUserIndex];
 
     // only one category, need to figure out how to randomly choose multiple categories
-    const category = "paint/mediums";
+    const category = "PM";
 
     const createdPost = await Post.create({ description, username, category });
 

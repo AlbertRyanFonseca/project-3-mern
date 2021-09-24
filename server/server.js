@@ -6,6 +6,11 @@ const mongoose = require("mongoose");
 const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/auth');
 
+
+
+
+
+
 // import typeDefs and resolvers
 const { typeDefs, resolvers } = require("./schemas");
 const PORT = process.env.PORT || 3001;
@@ -28,9 +33,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/public")));
 }
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/public/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../client/public/index.html"));
+// });
 
 
 //app.use(routes);
@@ -45,7 +50,7 @@ db.once("open", () => {
 db.on("error", (err) => {
   console.error("MongoDB connection error: ", err);
 });
-});
+
 db.on("error", (err) => {
   console.error("MongoDB connection error: ", err);
 });
