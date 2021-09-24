@@ -6,6 +6,19 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
 
+      me: async (parent, args, context) => {
+        if (context.user) {
+          const userData = await User.findOne({ _id: context.user._id })
+            .select('-__v -password')
+            .populate('posts');
+            
+      
+          return userData;
+        }
+      
+        throw new AuthenticationError('Not logged in');
+      },
+
         // return all posts from a single user (based on username)
         posts: async (parent, { username }) => {
             const params = username ? { username } : {};
@@ -16,6 +29,20 @@ const resolvers = {
         post: async (parent, { _id }) => {
             return Post.findOne({ _id });
         },
+
+        // get all posts
+
+        posts: async() => {
+          return Post.find();
+        },
+
+        // get all users
+        users: async () => {
+          return User.find();
+          // .select('-__v -password')
+        },
+          
+      // },
 
         },
 
@@ -49,8 +76,8 @@ const resolvers = {
 
         addPost: async (parent, args) => {
 
-        if(user){    
-          const post = await Post.create({ ...args, username});
+        if(context.user){    
+          const post = await Post.create({ ...args, username: context.user.username });
 
           await User.findByIdAndUpdate(
             { _id: user._id},
