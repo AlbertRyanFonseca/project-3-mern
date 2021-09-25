@@ -52,6 +52,7 @@ function App() {
 
   return (
     <div className="App">
+       <Header />
       <IconInfo info={categories} />
     </div>
   );
