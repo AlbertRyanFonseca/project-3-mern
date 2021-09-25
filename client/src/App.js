@@ -1,7 +1,5 @@
-
 import IconInfo from './components/IconInfo/IconInfo';
-import Header from './components/Header/Header';
-
+import UserPage from './components/UserPage/UserPage';
 
 function App() {
   const categories = [
@@ -54,7 +52,6 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
       <IconInfo info={categories} />
     </div>
   );

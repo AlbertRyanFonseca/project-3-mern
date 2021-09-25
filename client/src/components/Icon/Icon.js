@@ -5,15 +5,15 @@ function Icon(props) {
         <div className="icon__containter">
             <div className="row">
                 <div className="column">
-                    <span className="circle">
-                        <span className="inner-circle">
+                    <span className="outer__circle">
+                        <span className="inner__circle">
 
                         </span>
                     </span>
                 </div>
                 <div className="column">
-                    <span className="circle">
-                        <span className="inner-circle">
+                    <span className="outer__circle">
+                        <span className="inner__circle">
 
                         </span>
                     </span>
