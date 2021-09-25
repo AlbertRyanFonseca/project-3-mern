@@ -74,9 +74,12 @@ const resolvers = {
           },
 
 
-        addPost: async (parent, args) => {
+        addPost: async (parent, args, context) => {
 
-        if(context.user){    
+          const user =  context.user;  
+
+        if(context.user){  
+           
           const post = await Post.create({ ...args, username: context.user.username });
 
           await User.findByIdAndUpdate(

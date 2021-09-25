@@ -1,4 +1,30 @@
+import React from 'react';
+
 import IconInfo from './components/IconInfo/IconInfo';
+import Header from './components/Header/Header';
+import Login from './components/Login/Login';
+
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+// import ApolloClient from 'apollo-boost';
+// import ApolloProvider from 'apollo-boost';
+// import InMemoryCache from 'apollo-boost';
+// import createHttpLink from 'apollo-boost';
+
+
+const client = new ApolloClient({
+  request: operation => {
+    const token = localStorage.getItem('id_token');
+
+    operation.setContext({
+      headers: {
+        authorization: token ? `Bearer ${token}` : ''
+      }
+    });
+  },
+  uri: '/graphql',
+  
+  cache: new InMemoryCache()
+});
 
 function App() {
   const categories = [
@@ -50,10 +76,28 @@ function App() {
   ]
 
   return (
-    <div className="App">
-      <IconInfo info={categories} />
-    </div>
+    <ApolloProvider client={client}>
+      <div className="App">
+        <Header />
+        <div className="container">
+        <IconInfo info={categories} />
+        </div>
+        <Login />
+      </div>
+    </ApolloProvider>
   );
+
+
+
+
+
+  // return (
+  //   <div className="App">
+  //     <Header />
+  //     <IconInfo info={categories} />
+  //     {/* <Login /> */}
+  //   </div>
+  // );
 }
 
 export default App;

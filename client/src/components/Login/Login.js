@@ -1,9 +1,9 @@
 import './Login.css';
 import React, { useState } from 'react';
-import Auth from '../utils/auth';
-import { useMutation } from '@apollo/client';
+import Auth from '../../utils/auth';
+import { useMutation } from '@apollo/react-hooks';
 
-import { LOGIN_USER } from '../utils/mutations';
+import { LOGIN_USER } from '../../utils/mutations';
 
 
 const Login = (props) => {
