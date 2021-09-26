@@ -76,7 +76,7 @@ const resolvers = {
 
         addPost: async (parent, args, context) => {
 
-          const user =  context.user;  
+          const user =  context.user;  // need to call context -- could also remove context.user from the rest and just use "user"
 
         if(context.user){  
            

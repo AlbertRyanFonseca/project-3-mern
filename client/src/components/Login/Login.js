@@ -1,7 +1,7 @@
 import './Login.css';
 import React, { useState } from 'react';
-import Auth from '../../utils/auth';
-import { useMutation } from '@apollo/react-hooks';
+import AuthService from '../../utils/auth';
+import { useMutation } from '@apollo/client';
 
 import { LOGIN_USER } from '../../utils/mutations';
 
@@ -26,15 +26,17 @@ const Login = (props) => {
     event.preventDefault();
 
     try {
+      console.log(formState);
       const { data } = await login({
         variables: { ...formState }
       });
+      console.log(data);
     
-      Auth.login(data.login.token);
+      AuthService.login(data.login.token);
     } catch (e) {
       console.error(e);
     }
-  };
+  
 
     // clear form values
     setFormState({
@@ -42,7 +44,7 @@ const Login = (props) => {
       password: '',
     });
   
-
+  };
 
 
 
@@ -76,7 +78,7 @@ const Login = (props) => {
                 Submit
               </button>
             </form>
-            {error && <div>Login failed</div>}
+            {/* {error && <div>Login failed</div>} */}
           </div>
         </div>
       </div>
