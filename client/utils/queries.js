@@ -5,7 +5,7 @@ import gql from 'graphql-tag';
 export const QUERY_POST = gql`
   query post($id: ID!) {
     post(_id: $id) {
-      _id
+      postId
       description
       createdAt
       username
@@ -21,7 +21,7 @@ export const QUERY_ME = gql`
       username
       email
       posts {
-        _id
+        postId
         description
         createdAt
         username
