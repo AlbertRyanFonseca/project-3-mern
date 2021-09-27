@@ -1,0 +1,36 @@
+.outer__circle {
+  width: 6.875em;
+  height: 6.875em;
+  border-radius: 50%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.inner__circle {
+  width: 6.25em;
+  height: 6.25em;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.circle-title {
+  text-align: center;
+  font-size: 3.125rem;
+}
+
+.circle-desc {
+  text-align: center;
+}
+
+/* .row {
+  display: flex;
+  margin-top: 5em;
+}
+
+.column {
+  flex: 50%;
+  margin-left: 10%;
+} */
