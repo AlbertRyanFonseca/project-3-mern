@@ -1,4 +1,7 @@
 import IconInfo from './components/IconInfo/IconInfo';
+import { Route } from 'react-router-dom';
+import Login from './components/Login/Login';
+import Header from './components/Header/Header';
 
 function App() {
   const categories = [
@@ -51,7 +54,13 @@ function App() {
 
   return (
     <div className="App">
-      <IconInfo info={categories} />
+      <Header />
+      <Route path="/home">
+        <IconInfo info={categories} />
+      </Route>
+      <Route path="/login">
+        <Login />
+      </Route>
     </div>
   );
 }
