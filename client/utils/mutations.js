@@ -27,7 +27,7 @@ export const ADD_USER = gql`
 export const ADD_POST = gql`
   mutation addPost($description: String!) {
     addThought(description: $description) {
-      _id
+      postId
       description
       createdAt
       username
@@ -35,4 +35,14 @@ export const ADD_POST = gql`
   }
 `;
 
+export const REMOVE_POST = gql`
+  mutation removePost($description: String!) {
+    addThought(description: $description) {
+      postId
+      description
+      createdAt
+      username
+    }
+  }
+`;
 
