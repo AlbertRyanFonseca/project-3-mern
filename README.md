@@ -1,4 +1,4 @@
-### Supply Interchange LA 
+# Supply Interchange LA 
 
 Supply Interchange LA is an app that allows for the exchange of used/leftover/discount art supplies and related materials
 and tools.
