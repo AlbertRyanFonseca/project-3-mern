@@ -1,12 +1,15 @@
-import './UserPage';
-import React from "react"
-import "../UserPage"
-function UserPage() {
+import './UserPage.css'
+
+function UserPage(props) {
     return (
-        <div className="UserPage">
-            <div className="Hello">Hello <span className="user">{PaymentResponse.UserPage}</span>, welcome!</div>
+        <div className="icons__container">
+            <div className="icon__title">
+                <h2>{props.title}Hello!</h2>
+                <div className="icon__description">{props.description}</div>
+            </div>
         </div>
     );
+
 };
 
 export default UserPage;
