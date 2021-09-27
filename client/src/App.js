@@ -1,5 +1,5 @@
 import IconInfo from './components/IconInfo/IconInfo';
-import UserPage from './components/UserPage/UserPage';
+
 
 function App() {
   const categories = [
