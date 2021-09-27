@@ -1,17 +1,25 @@
 import React from "react";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 import Auth from "../../utils/auth"
-import { removePostId } from "../utils/localStorage";
-import { GET_ME } from "../utils/queries";
-import { REMOVE_POST } from "../utils/mutations";
+import { removePostId, savePostIds } from "../../utils/localStorage";
+import { QUERY_ME } from "../../utils/queries";
+import { REMOVE_POST } from "../../utils/mutations";
+
+import {
+  Jumbotron,
+  Container,
+  CardColumns,
+  Card,
+  Button,
+} from "react-bootstrap";
 
 const Posts = () => {
-    const { loading, data } = useQuery(GET_ME);
+    const { loading, data } = useQuery(QUERY_ME);
     const userData = data?.me || [];
   
     const [removePost, { error }] = useMutation(REMOVE_POST);
   
-    const handleDeletePost = async (PostId) => {
+    const handleDeletePost = async (postId) => {
       const token = Auth.loggedIn() ? Auth.getToken() : null;
       if (!token) {
         return false;
