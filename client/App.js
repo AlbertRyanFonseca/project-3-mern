@@ -107,7 +107,7 @@ function App() {
         <div className="container">
           <Switch>
         {/* <IconInfo info={categories} /> */}
-        <Route exact path="/Posts" component={ post } />
+        <Route exact path="/Posts" component={ Post } />
         <Route exact path="/" component={ HomePage } />
         <Route exact path="/login" component={ Login } />
         <Route exact path="/register" component={ Register } />
