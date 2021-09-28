@@ -101,6 +101,7 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
+    <Header>
       <Router>
       <div className="App">
         <Header />
@@ -117,6 +118,7 @@ function App() {
       </div>
 
       </Router>
+</Header>
     </ApolloProvider>
   );
 
